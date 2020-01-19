@@ -66,7 +66,7 @@ public:
     void add_alignment(const Alignment& alignment, const char* sequence,
         std::uint32_t sequence_size, const std::vector<std::uint32_t>& weights);
 
-    void generate_multiple_sequence_alignment(std::vector<std::string>& dst,
+    std::vector<std::uint32_t> generate_multiple_sequence_alignment(std::vector<std::string>& dst,
         bool include_consensus = false);
 
     std::string generate_consensus();

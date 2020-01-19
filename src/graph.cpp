@@ -387,7 +387,7 @@ std::uint32_t Graph::initialize_multiple_sequence_alignment(
     return msa_id;
 }
 
-void Graph::generate_multiple_sequence_alignment(std::vector<std::string>& dst,
+std::vector<std::uint32_t> Graph::generate_multiple_sequence_alignment(std::vector<std::string>& dst,
     bool include_consensus) {
 
     // assign msa id to each node
@@ -423,6 +423,7 @@ void Graph::generate_multiple_sequence_alignment(std::vector<std::string>& dst,
         }
         dst.emplace_back(alignment_str);
     }
+    return node_id_to_msa_id; 
 }
 
 std::string Graph::generate_consensus() {
